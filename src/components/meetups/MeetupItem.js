@@ -10,6 +10,9 @@ const MeetupItem = (props) => {
   const deleteHandler = () => {
     setIsModal(true);
   };
+  const returnHandler = () => {
+    setIsModal(false);
+  };
   const favContx = useContext(FavouriteContext);
   const isFav = favContx.isFavourite(props.id);
   const toggleFavorite = () => {
@@ -44,8 +47,8 @@ const MeetupItem = (props) => {
         </div>
         {isModal && (
           <>
-            <Modal />
-            <Backdrop />{" "}
+            <Modal removal = {returnHandler}/>
+            <Backdrop removal = {returnHandler}/>
           </>
         )}
       </Card>

@@ -1,9 +1,9 @@
-
-import classes from "./Backdrop.module.css"
+import classes from "./Backdrop.module.css";
 const Backdrop = (props) => {
-  return (
-    <div className={classes.backdrop} onClick = {props.confirmModal}></div>
-  )
-}
+  const remove = () => {
+    props.removal();
+  };
+  return <div className={classes.backdrop} onClick={remove}></div>;
+};
 
-export default Backdrop
+export default Backdrop;
