@@ -1,9 +1,9 @@
 
+import classes from "./Backdrop.module.css"
+const Backdrop = (props) => {
+  return (
+    <div className={classes.backdrop} onClick = {props.confirmModal}></div>
+  )
+}
 
-// const Backdrop = (props) => {
-//   return (
-//     <div className="backdrop" onClick = {props.confirmModal}></div>
-//   )
-// }
-
-// export default Backdrop
+export default Backdrop
