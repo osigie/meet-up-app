@@ -29,13 +29,15 @@ const MeetupItem = (props) => {
         </div>
         <div className={classes.actions}>
           <button onClick={toggleFavorite}>
-            {" "}
             {isFav ? "Remove from Favourite" : "To favourites"}
           </button>
         </div>
+        <div className={classes.actions}>
+          <button> Delete</button>
+        </div>
       </Card>
     </li>
-  ); 
+  );
 };
 
 export default MeetupItem;
