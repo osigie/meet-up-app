@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 import MeetupList from "../meetups/MeetupList";
 
-
-
 const AllMeetups = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -26,6 +24,7 @@ const AllMeetups = () => {
         setLoading(false);
       });
   }, []);
+
 
   if (loading) {
     return (

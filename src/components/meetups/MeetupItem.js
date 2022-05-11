@@ -2,17 +2,18 @@ import classes from "./MeetupItem.module.css";
 import Card from "../ui/Card";
 import { useContext, useState } from "react";
 import { FavouriteContext } from "../store/favourites-context";
-import Backdrop from "../deleteItem/Backdrop";
-import Modal from "../deleteItem/Modal";
+// import Backdrop from "../deleteItem/Backdrop";
+// import Modal from "../deleteItem/Modal";
 const MeetupItem = (props) => {
-  const [isModal, setIsModal] = useState(false);
+  // const [isModal, setIsModal] = useState(false);
 
-  const deleteHandler = () => {
-    setIsModal(true);
-  };
-  const returnHandler = () => {
-    setIsModal(false);
-  };
+  // const deleteHandler = () => {
+  //   setIsModal(true);
+  // };
+  // const returnHandler = () => {
+  //   setIsModal(false);
+  // };
+
   const favContx = useContext(FavouriteContext);
   const isFav = favContx.isFavourite(props.id);
   const toggleFavorite = () => {
@@ -42,18 +43,19 @@ const MeetupItem = (props) => {
             {isFav ? "Remove from Favourite" : "To favourites"}
           </button>
         </div>
-        <div className={classes.actions}>
-          <button onClick={deleteHandler}> Delete</button>
-        </div>
-        {isModal && (
+        {/* <div className={classes.actions}>
+          <button onClick={deleteHandler}>Delete</button>
+        </div> */}
+        {/* {isModal && (
           <>
-            <Modal removal = {returnHandler}/>
-            <Backdrop removal = {returnHandler}/>
+            <Modal removal = {returnHandler} id = {props.id}/>
+            <Backdrop removal = {returnHandler} />
           </>
-        )}
+        )} */}
       </Card>
     </li>
   );
 };
 
 export default MeetupItem;
+
